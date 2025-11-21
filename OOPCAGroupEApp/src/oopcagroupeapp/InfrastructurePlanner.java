@@ -6,16 +6,16 @@ package oopcagroupeapp;
 
 /**
  *
- * @author taara
+ * @Vincentas Tarasevicius x23524449
  */
-public class InfastructurePlanner extends javax.swing.JFrame {
+public class InfrastructurePlanner extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(InfastructurePlanner.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(InfrastructurePlanner.class.getName());
 
     /**
      * Creates new form InfastructurePlanner
      */
-    public InfastructurePlanner() {
+    public InfrastructurePlanner() {
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -32,7 +32,7 @@ public class InfastructurePlanner extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         costCalButton = new javax.swing.JButton();
         envCalButton = new javax.swing.JButton();
-        exitButton = new javax.swing.JButton();
+        mainButton = new javax.swing.JButton();
         compMatButton = new javax.swing.JButton();
         aboutButton = new javax.swing.JButton();
         contactButton = new javax.swing.JButton();
@@ -59,10 +59,10 @@ public class InfastructurePlanner extends javax.swing.JFrame {
             }
         });
 
-        exitButton.setText("Exit");
-        exitButton.addActionListener(new java.awt.event.ActionListener() {
+        mainButton.setText("Main Menu");
+        mainButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitButtonActionPerformed(evt);
+                mainButtonActionPerformed(evt);
             }
         });
 
@@ -92,22 +92,22 @@ public class InfastructurePlanner extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(contactButton, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(aboutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63)
-                .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addComponent(mainButton, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(167, 167, 167)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(costCalButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(envCalButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(compMatButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(136, 136, 136))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {compMatButton, costCalButton, envCalButton, jLabel1});
@@ -115,23 +115,23 @@ public class InfastructurePlanner extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
+                .addGap(22, 22, 22)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(68, 68, 68)
                 .addComponent(costCalButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addGap(71, 71, 71)
                 .addComponent(envCalButton)
-                .addGap(53, 53, 53)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addComponent(compMatButton)
-                .addGap(42, 42, 42)
+                .addGap(83, 83, 83)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mainButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(aboutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(contactButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {compMatButton, costCalButton, envCalButton, exitButton, jLabel1});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {compMatButton, costCalButton, envCalButton, jLabel1, mainButton});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -148,9 +148,11 @@ public class InfastructurePlanner extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_envCalButtonActionPerformed
 
-    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_exitButtonActionPerformed
+    private void mainButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButtonActionPerformed
+        MainGUI main = new MainGUI();
+        main.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_mainButtonActionPerformed
 
     private void compMatButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compMatButtonActionPerformed
         CompareMat compareMat = new CompareMat();
@@ -192,7 +194,7 @@ public class InfastructurePlanner extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new InfastructurePlanner().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new InfrastructurePlanner().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -201,7 +203,7 @@ public class InfastructurePlanner extends javax.swing.JFrame {
     private javax.swing.JButton contactButton;
     private javax.swing.JButton costCalButton;
     private javax.swing.JButton envCalButton;
-    private javax.swing.JButton exitButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton mainButton;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,7 +6,7 @@ package oopcagroupeapp;
 
 /**
  *
- * @author taara
+ * @Vincentas Tarasevicius x23524449
  */
 public class CompareMat extends javax.swing.JFrame {
     
@@ -41,7 +41,6 @@ public class CompareMat extends javax.swing.JFrame {
         traditionalLabel = new javax.swing.JLabel();
         recycledLabel = new javax.swing.JLabel();
         compareButton = new javax.swing.JButton();
-        textScrollBar = new javax.swing.JScrollBar();
         textLabel = new javax.swing.JLabel();
         menuButton = new javax.swing.JButton();
 
@@ -101,16 +100,16 @@ public class CompareMat extends javax.swing.JFrame {
                         .addGroup(materilasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(materilasPanelLayout.createSequentialGroup()
                                 .addComponent(woodCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(171, 171, 171)
+                                .addGap(248, 248, 248)
                                 .addComponent(recycledWoodCheckBox))
                             .addGroup(materilasPanelLayout.createSequentialGroup()
                                 .addGroup(materilasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(concreteCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(traditionalLabel))
-                                .addGap(146, 146, 146)
+                                .addGap(223, 223, 223)
                                 .addGroup(materilasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(recycledLabel)
-                                    .addComponent(recycledConcretCheckBox))))
+                                    .addComponent(recycledConcretCheckBox)
+                                    .addComponent(recycledLabel))))
                         .addContainerGap(9, Short.MAX_VALUE))))
         );
         materilasPanelLayout.setVerticalGroup(
@@ -136,6 +135,11 @@ public class CompareMat extends javax.swing.JFrame {
         );
 
         compareButton.setText("Compare");
+        compareButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                compareButtonActionPerformed(evt);
+            }
+        });
 
         menuButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         menuButton.setText("Return to Menu");
@@ -153,33 +157,28 @@ public class CompareMat extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(textLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(110, 110, 110)
-                                .addComponent(menuButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addComponent(textScrollBar, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(menuButton)
+                        .addGap(164, 164, 164))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(materilasPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
                                 .addComponent(projectLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(sizeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(34, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(sizeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(textLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(materilasPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(15, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(169, 169, 169)
-                        .addComponent(compareButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addComponent(compareLabel)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(compareButton)
+                        .addGap(207, 207, 207))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(compareLabel)
+                        .addGap(163, 163, 163))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,13 +194,10 @@ public class CompareMat extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(compareButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textScrollBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(textLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                        .addComponent(menuButton)))
-                .addContainerGap())
+                .addComponent(textLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(menuButton)
+                .addGap(16, 16, 16))
         );
 
         pack();
@@ -220,10 +216,14 @@ public class CompareMat extends javax.swing.JFrame {
     }//GEN-LAST:event_recycledConcretCheckBoxActionPerformed
 
     private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
-        InfastructurePlanner mainMenu = new InfastructurePlanner();
+        InfrastructurePlanner mainMenu = new InfrastructurePlanner();
         mainMenu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_menuButtonActionPerformed
+
+    private void compareButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compareButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_compareButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -264,7 +264,6 @@ public class CompareMat extends javax.swing.JFrame {
     private javax.swing.JCheckBox recycledWoodCheckBox;
     private javax.swing.JComboBox<String> sizeComboBox;
     private javax.swing.JLabel textLabel;
-    private javax.swing.JScrollBar textScrollBar;
     private javax.swing.JLabel traditionalLabel;
     private javax.swing.JCheckBox woodCheckBox;
     // End of variables declaration//GEN-END:variables

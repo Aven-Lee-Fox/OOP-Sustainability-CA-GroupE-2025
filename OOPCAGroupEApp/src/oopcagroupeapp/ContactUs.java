@@ -6,7 +6,7 @@ package oopcagroupeapp;
 
 /**
  *
- * @author taara
+ * @Vincentas Tarasevicius x23524449
  */
 public class ContactUs extends javax.swing.JFrame {
     
@@ -113,7 +113,7 @@ public class ContactUs extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addGap(36, 36, 36))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+                .addContainerGap(23, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -181,19 +181,19 @@ public class ContactUs extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(messageLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(submitButton)
                 .addGap(18, 18, 18)
                 .addComponent(meneButton)
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addGap(18, 18, 18))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void meneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meneButtonActionPerformed
-        InfastructurePlanner mainMenu = new InfastructurePlanner();
+        InfrastructurePlanner mainMenu = new InfrastructurePlanner();
         mainMenu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_meneButtonActionPerformed
