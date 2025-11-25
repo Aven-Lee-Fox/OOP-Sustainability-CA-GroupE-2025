@@ -34,8 +34,6 @@ public class InfrastructurePlanner extends javax.swing.JFrame {
         envCalButton = new javax.swing.JButton();
         mainButton = new javax.swing.JButton();
         compMatButton = new javax.swing.JButton();
-        aboutButton = new javax.swing.JButton();
-        contactButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,6 +57,7 @@ public class InfrastructurePlanner extends javax.swing.JFrame {
             }
         });
 
+        mainButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         mainButton.setText("Main Menu");
         mainButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,39 +73,18 @@ public class InfrastructurePlanner extends javax.swing.JFrame {
             }
         });
 
-        aboutButton.setText("About Us");
-        aboutButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aboutButtonActionPerformed(evt);
-            }
-        });
-
-        contactButton.setText("Contact Us");
-        contactButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                contactButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(contactButton, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addComponent(aboutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(mainButton, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap(141, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(costCalButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(envCalButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(compMatButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(compMatButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(mainButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(136, 136, 136))
         );
 
@@ -123,12 +101,9 @@ public class InfrastructurePlanner extends javax.swing.JFrame {
                 .addComponent(envCalButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addComponent(compMatButton)
-                .addGap(83, 83, 83)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mainButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(aboutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(contactButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addGap(75, 75, 75)
+                .addComponent(mainButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {compMatButton, costCalButton, envCalButton, jLabel1, mainButton});
@@ -139,38 +114,26 @@ public class InfrastructurePlanner extends javax.swing.JFrame {
     private void costCalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_costCalButtonActionPerformed
         CostCal costCal = new CostCal();
         costCal.setVisible(true);
-        this.setVisible(false);  
+        dispose(); 
     }//GEN-LAST:event_costCalButtonActionPerformed
 
     private void envCalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_envCalButtonActionPerformed
         EnvironmentCal envCal = new EnvironmentCal();
         envCal.setVisible(true);
-        this.setVisible(false);
+        dispose();
     }//GEN-LAST:event_envCalButtonActionPerformed
 
     private void mainButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButtonActionPerformed
         MainGUI main = new MainGUI();
         main.setVisible(true);
-        this.setVisible(false);
+        dispose();
     }//GEN-LAST:event_mainButtonActionPerformed
 
     private void compMatButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compMatButtonActionPerformed
         CompareMat compareMat = new CompareMat();
         compareMat.setVisible(true);
-        this.setVisible(false);
+        dispose();
     }//GEN-LAST:event_compMatButtonActionPerformed
-
-    private void aboutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutButtonActionPerformed
-        AboutUs aboutUs = new AboutUs();
-        aboutUs.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_aboutButtonActionPerformed
-
-    private void contactButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactButtonActionPerformed
-        ContactUs contactUs = new ContactUs();
-        contactUs.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_contactButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,9 +161,7 @@ public class InfrastructurePlanner extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton aboutButton;
     private javax.swing.JButton compMatButton;
-    private javax.swing.JButton contactButton;
     private javax.swing.JButton costCalButton;
     private javax.swing.JButton envCalButton;
     private javax.swing.JLabel jLabel1;

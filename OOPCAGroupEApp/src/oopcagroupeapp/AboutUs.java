@@ -29,7 +29,6 @@ public class AboutUs extends javax.swing.JFrame {
     private void initComponents() {
 
         whyTabel = new javax.swing.JLabel();
-        menuButton = new javax.swing.JButton();
         textPanel = new javax.swing.JPanel();
         whyLabel = new javax.swing.JLabel();
         textLabel = new javax.swing.JLabel();
@@ -39,64 +38,59 @@ public class AboutUs extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         contactLabel = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        menuButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         whyTabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         whyTabel.setText("Why Infastructure Planning");
 
-        menuButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        menuButton.setText("Back to Menu");
-        menuButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuButtonActionPerformed(evt);
-            }
-        });
-
         whyLabel.setText("Why:");
 
-        textLabel.setText("Help build projects in a cleaner and smarter way and ");
+        textLabel.setText("We wanna help build projects in a cleaner and smarter way not only its good for ");
 
         featuresLabel.setText("Features:");
 
-        jLabel4.setText("- Cost calculator.");
+        jLabel4.setText("- Industry.");
 
-        jLabel5.setText("Track budgets and use eco friendly materilas");
+        jLabel6.setText("- Innovation.");
 
-        jLabel6.setText("- Compare Materilas.");
-
-        jLabel7.setText("- CO2 tracker.");
+        jLabel7.setText("- Infrastructure.");
 
         contactLabel.setText("Feel free to ask any questions in Contact Us :)");
+
+        jLabel1.setText("the environment but it can be cost efficient for your project. have a look at our");
+
+        jLabel2.setText("features and feel free to browse on our app.");
 
         javax.swing.GroupLayout textPanelLayout = new javax.swing.GroupLayout(textPanel);
         textPanel.setLayout(textPanelLayout);
         textPanelLayout.setHorizontalGroup(
             textPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(textPanelLayout.createSequentialGroup()
-                .addGroup(textPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(textPanelLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel5))
-                    .addGroup(textPanelLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(textPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel6)
-                            .addComponent(featuresLabel))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(textPanelLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(textPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(textPanelLayout.createSequentialGroup()
-                        .addComponent(whyLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(textLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, textPanelLayout.createSequentialGroup()
                 .addGap(0, 114, Short.MAX_VALUE)
                 .addComponent(contactLabel)
                 .addGap(100, 100, 100))
+            .addGroup(textPanelLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(textPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(textPanelLayout.createSequentialGroup()
+                        .addGroup(textPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel6)
+                            .addComponent(featuresLabel))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(textPanelLayout.createSequentialGroup()
+                        .addGroup(textPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(whyLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textLabel)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         textPanelLayout.setVerticalGroup(
             textPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,6 +99,10 @@ public class AboutUs extends javax.swing.JFrame {
                 .addComponent(whyLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addGap(42, 42, 42)
@@ -115,19 +113,23 @@ public class AboutUs extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addComponent(contactLabel)
                 .addGap(53, 53, 53))
         );
+
+        menuButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        menuButton1.setText("Back to Menu");
+        menuButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(menuButton)
-                .addGap(172, 172, 172))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -137,6 +139,10 @@ public class AboutUs extends javax.swing.JFrame {
                         .addGap(132, 132, 132)
                         .addComponent(whyTabel)))
                 .addContainerGap(24, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(menuButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(167, 167, 167))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,17 +152,18 @@ public class AboutUs extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(menuButton)
-                .addGap(34, 34, 34))
+                .addComponent(menuButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
-        InfrastructurePlanner mainMenu = new InfrastructurePlanner();
-        mainMenu.setVisible(true);
-        this.setVisible(false);        this.setVisible(false);        this.setVisible(false);    }//GEN-LAST:event_menuButtonActionPerformed
+    private void menuButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButton1ActionPerformed
+        MainGUI main = new MainGUI();
+        main.setVisible(true);
+        dispose();// gies back to menu
+    }//GEN-LAST:event_menuButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,11 +193,13 @@ public class AboutUs extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel contactLabel;
     private javax.swing.JLabel featuresLabel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JButton menuButton;
+    private javax.swing.JButton menuButton1;
     private javax.swing.JLabel textLabel;
     private javax.swing.JPanel textPanel;
     private javax.swing.JLabel whyLabel;

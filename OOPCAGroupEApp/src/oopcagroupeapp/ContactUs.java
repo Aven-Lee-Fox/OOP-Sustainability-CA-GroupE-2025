@@ -147,11 +147,11 @@ public class ContactUs extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(207, 207, 207)
-                        .addComponent(submitButton))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(171, 171, 171)
-                        .addComponent(meneButton)))
+                        .addComponent(meneButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(207, 207, 207)
+                        .addComponent(submitButton)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -193,9 +193,9 @@ public class ContactUs extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void meneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meneButtonActionPerformed
-        InfrastructurePlanner mainMenu = new InfrastructurePlanner();
-        mainMenu.setVisible(true);
-        this.setVisible(false);
+        MainGUI main = new MainGUI();
+        main.setVisible(true);
+        dispose(); 
     }//GEN-LAST:event_meneButtonActionPerformed
 
     private void nameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextFieldActionPerformed
@@ -207,7 +207,32 @@ public class ContactUs extends javax.swing.JFrame {
     }//GEN-LAST:event_emailTextFieldActionPerformed
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
-        // TODO add your handling code here:
+        String name = nameTextField.getText(); //making the String equal to the text label
+        String email = emailTextField.getText();
+        String subject = subjectTextField.getText();
+        String message = messageTextArea.getText();
+        //if name, emial, subject, and message is blank
+        //it the user desnt put anything in the textfield
+        if(name.isBlank() || email.isBlank() || subject.isBlank() || message.isBlank()){
+            //this will print out for the user
+            javax.swing.JOptionPane.showMessageDialog(this, "Please fill in all the fields before submitting.");
+            return;
+        }
+        //if email does not end with @gmail.com 
+        if(!email.endsWith("@gmail.com")){
+            //this will print out for the user
+            javax.swing.JOptionPane.showMessageDialog(this,"Please us a valid email with a @gmail");
+            return;
+        }
+        
+        // this will print out if you actully comply with entering evrythin right
+        javax.swing.JOptionPane.showMessageDialog(this, "Thank you for submitting your message and helpng this planet to be more greener.");      
+        
+        // this basically clears all the textfields to make it look better
+        nameTextField.setText("");
+        emailTextField.setText("");
+        subjectTextField.setText("");
+        messageTextArea.setText("");
     }//GEN-LAST:event_submitButtonActionPerformed
 
     /**

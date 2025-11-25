@@ -32,8 +32,8 @@
               </Group>
               <EmptySpace pref="119" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jTextField1" min="-2" pref="88" max="-2" attributes="0"/>
-                  <Component id="jTextField2" min="-2" pref="88" max="-2" attributes="0"/>
+                  <Component id="labourTextField" min="-2" pref="88" max="-2" attributes="0"/>
+                  <Component id="materialTextField" min="-2" pref="88" max="-2" attributes="0"/>
                   <Component id="calculateButton" min="-2" pref="88" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
@@ -57,13 +57,13 @@
               <Component id="titleLabel" min="-2" pref="52" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jTextField2" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="materialTextField" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="materialField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="labourField" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField1" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                  <Component id="labourTextField" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="92" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -104,12 +104,12 @@
         <Property name="text" type="java.lang.String" value="Total: 0.00"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="labourTextField">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="labourTextFieldActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JTextField" name="materialTextField">
     </Component>
     <Component class="javax.swing.JButton" name="calculateButton">
       <Properties>

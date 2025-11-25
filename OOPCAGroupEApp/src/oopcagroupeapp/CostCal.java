@@ -32,8 +32,8 @@ public class CostCal extends javax.swing.JFrame {
         materialField = new javax.swing.JLabel();
         labourField = new javax.swing.JLabel();
         totalLabel = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        labourTextField = new javax.swing.JTextField();
+        materialTextField = new javax.swing.JTextField();
         calculateButton = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
 
@@ -49,9 +49,9 @@ public class CostCal extends javax.swing.JFrame {
 
         totalLabel.setText("Total: 0.00");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        labourTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                labourTextFieldActionPerformed(evt);
             }
         });
 
@@ -82,8 +82,8 @@ public class CostCal extends javax.swing.JFrame {
                     .addComponent(materialField, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labourTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(materialTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(calculateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(97, 97, 97))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -102,12 +102,12 @@ public class CostCal extends javax.swing.JFrame {
                 .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(materialTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(materialField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(90, 90, 90)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labourField)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labourTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(totalLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -120,26 +120,30 @@ public class CostCal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void labourTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labourTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void calculateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateButtonActionPerformed
-        try{
-            double material = Double.parseDouble(jTextField1.getText());
-            double labour = Double.parseDouble(jTextField2.getText());
-            double total = material + labour;
-            totalLabel.setText("Total: " + String.format("%.2f",total));
-        }catch (NumberFormatException e){
-            totalLabel.setText("Toatl: Invalid input");
-        }
-    }//GEN-LAST:event_calculateButtonActionPerformed
+    }//GEN-LAST:event_labourTextFieldActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         InfrastructurePlanner mainMenu = new InfrastructurePlanner();
         mainMenu.setVisible(true);
-        this.setVisible(false);
+        dispose();
     }//GEN-LAST:event_backButtonActionPerformed
+
+    private void calculateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateButtonActionPerformed
+        try{
+            //this gets the numbers from the boxes
+            double material = Double.parseDouble(labourTextField.getText());
+            double labour = Double.parseDouble(materialTextField.getText());
+            // this adds the together
+            double total = material + labour;
+            //shows the result
+            totalLabel.setText("Total: " + total);
+        }catch (NumberFormatException e){
+            //if the user types words instead of numbers it will show an error
+            totalLabel.setText("Total: Invalid input");
+        }
+    }//GEN-LAST:event_calculateButtonActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -165,10 +169,10 @@ public class CostCal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
     private javax.swing.JButton calculateButton;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel labourField;
+    private javax.swing.JTextField labourTextField;
     private javax.swing.JLabel materialField;
+    private javax.swing.JTextField materialTextField;
     private javax.swing.JLabel titleLabel;
     private javax.swing.JLabel totalLabel;
     // End of variables declaration//GEN-END:variables

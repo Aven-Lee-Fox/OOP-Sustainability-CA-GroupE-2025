@@ -24,21 +24,13 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="contactButton" min="-2" pref="138" max="-2" attributes="0"/>
-              <EmptySpace pref="35" max="32767" attributes="0"/>
-              <Component id="aboutButton" min="-2" pref="138" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-              <Component id="mainButton" min="-2" pref="138" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace pref="141" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jLabel1" linkSize="1" max="32767" attributes="0"/>
                   <Component id="costCalButton" linkSize="1" max="32767" attributes="0"/>
                   <Component id="envCalButton" linkSize="1" max="32767" attributes="0"/>
                   <Component id="compMatButton" linkSize="1" max="32767" attributes="0"/>
+                  <Component id="mainButton" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
           </Group>
@@ -55,13 +47,9 @@
               <Component id="envCalButton" linkSize="2" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="85" max="32767" attributes="0"/>
               <Component id="compMatButton" linkSize="2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="mainButton" linkSize="2" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="aboutButton" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                  <Component id="contactButton" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+              <Component id="mainButton" linkSize="2" min="-2" pref="33" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -100,6 +88,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="mainButton">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Main Menu"/>
       </Properties>
       <Events>
@@ -115,22 +106,6 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="compMatButtonActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="aboutButton">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="About Us"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="aboutButtonActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="contactButton">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Contact Us"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="contactButtonActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
