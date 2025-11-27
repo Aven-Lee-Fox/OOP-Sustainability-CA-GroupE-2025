@@ -4,6 +4,8 @@
  */
 package oopcagroupeapp;
 
+import java.awt.Color;
+
 /**
  *
  * @author Joseph Moiselle 24308453
@@ -17,6 +19,17 @@ public class QuestionnaireGUI extends javax.swing.JFrame {
      */
     public QuestionnaireGUI() {
         initComponents();
+        getContentPane().setBackground(Color.decode("#6EA0B1"));
+        jRadioButton1.setBackground(Color.decode("#6EA0B1"));
+        jRadioButton2.setBackground(Color.decode("#6EA0B1"));
+        jRadioButton3.setBackground(Color.decode("#6EA0B1"));
+        jRadioButton4.setBackground(Color.decode("#6EA0B1"));
+        jRadioButton5.setBackground(Color.decode("#6EA0B1"));
+        jRadioButton6.setBackground(Color.decode("#6EA0B1"));
+        jRadioButton7.setBackground(Color.decode("#6EA0B1"));
+        jButton1.setBackground(Color.decode("#E5690B"));
+        jButton2.setBackground(Color.decode("#E5690B"));
+        jButton3.setBackground(Color.decode("#E5690B"));
     }
 
     /**
@@ -44,6 +57,7 @@ public class QuestionnaireGUI extends javax.swing.JFrame {
         jRadioButton6 = new javax.swing.JRadioButton();
         jRadioButton7 = new javax.swing.JRadioButton();
         jButton3 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
 
@@ -64,6 +78,7 @@ public class QuestionnaireGUI extends javax.swing.JFrame {
 
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("Yes");
+        jRadioButton1.setActionCommand("\"Yes\"");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton1ActionPerformed(evt);
@@ -72,15 +87,18 @@ public class QuestionnaireGUI extends javax.swing.JFrame {
 
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("No");
+        jRadioButton2.setActionCommand("\"No\"");
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Is the public transportation in the area reliable?");
 
         buttonGroup2.add(jRadioButton3);
         jRadioButton3.setText("Yes");
+        jRadioButton3.setActionCommand("\"Yes\"");
 
         buttonGroup2.add(jRadioButton5);
         jRadioButton5.setText("No");
+        jRadioButton5.setActionCommand("\"No\"");
         jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton5ActionPerformed(evt);
@@ -92,28 +110,25 @@ public class QuestionnaireGUI extends javax.swing.JFrame {
 
         buttonGroup3.add(jRadioButton6);
         jRadioButton6.setText("Yes");
+        jRadioButton6.setActionCommand("\"Yes\"");
 
         buttonGroup3.add(jRadioButton7);
         jRadioButton7.setText("No");
+        jRadioButton7.setActionCommand("\"No\"");
 
         jButton3.setText("Find best work style");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(206, 206, 206)
-                        .addComponent(jRadioButton6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton7)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addContainerGap(422, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,7 +150,23 @@ public class QuestionnaireGUI extends javax.swing.JFrame {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)))))
-                .addGap(0, 110, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(206, 206, 206)
+                        .addComponent(jRadioButton6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRadioButton7)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton2)
+                                .addGap(0, 416, Short.MAX_VALUE))
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,7 +191,9 @@ public class QuestionnaireGUI extends javax.swing.JFrame {
                     .addComponent(jRadioButton7))
                 .addGap(18, 18, 18)
                 .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 260, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 172, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addContainerGap())
         );
@@ -183,6 +216,12 @@ public class QuestionnaireGUI extends javax.swing.JFrame {
     private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        
+        Response();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -208,6 +247,27 @@ public class QuestionnaireGUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new QuestionnaireGUI().setVisible(true));
     }
+    
+    public void Response(){
+    
+        Questionnaire myQuest = new Questionnaire();
+        
+        try{
+        
+            myQuest.setResp1(buttonGroup1.getSelection().getActionCommand());
+            myQuest.setResp2(buttonGroup2.getSelection().getActionCommand());
+            myQuest.setResp3(buttonGroup3.getSelection().getActionCommand());
+            myQuest.work();
+            jLabel4.setText(myQuest.getWrkStyle());
+        
+        }catch(NullPointerException e){
+            
+            jLabel4.setText("Please answer all questions");
+        
+            
+        }
+    
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
@@ -219,6 +279,7 @@ public class QuestionnaireGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;

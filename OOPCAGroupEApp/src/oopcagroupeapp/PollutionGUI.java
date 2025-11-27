@@ -4,6 +4,8 @@
  */
 package oopcagroupeapp;
 
+import java.awt.Color;
+
 /**
  *
  * @author Joseph Moiselle 24308453
@@ -17,6 +19,11 @@ public class PollutionGUI extends javax.swing.JFrame {
      */
     public PollutionGUI() {
         initComponents();
+        getContentPane().setBackground(Color.decode("#6EA0B1"));
+        jButton1.setBackground(Color.decode("#E5690B"));
+        jButton2.setBackground(Color.decode("#E5690B"));
+        jComboBox1.setBackground(Color.decode("#E5690B"));
+        jComboBox2.setBackground(Color.decode("#E5690B"));
     }
 
     /**

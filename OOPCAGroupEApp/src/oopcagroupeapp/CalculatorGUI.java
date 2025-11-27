@@ -21,6 +21,8 @@ public class CalculatorGUI extends javax.swing.JFrame {
         getContentPane().setBackground(Color.decode("#6EA0B1"));
         jButton1.setBackground(Color.decode("#E5690B"));
         jButton2.setBackground(Color.decode("#E5690B"));
+        jRadioButton1.setBackground(Color.decode("#6EA0B1"));
+        jRadioButton2.setBackground(Color.decode("#6EA0B1"));
     }
 
     /**
@@ -293,19 +295,20 @@ public class CalculatorGUI extends javax.swing.JFrame {
             myCal.setSolar(buttonGroup1.getSelection().getActionCommand());
             System.out.println(buttonGroup1.getSelection().getActionCommand());
             myCal.calc();
-            
-            if(myCal.getTotal() == -9999){
-                Total.setText("Please select yes or no above");
-            }else if(buttonGroup1.getSelection().getActionCommand() == "\"No\""){
+         
+           if(buttonGroup1.getSelection().getActionCommand() == "\"No\""){
                 Total.setText("Your Bill = €" + String.format("%.2f", myCal.getTotal()) + " You would save €91 with solar panels");
             } else{
                 Total.setText("Your Bill = €" + String.format("%.2f", myCal.getTotal()));
             }
         }catch (NumberFormatException e){
             Total.setText("Invalid input");
+        } catch (NullPointerException e){
+            
+           Total.setText("Please select yes or no.");
+            
         }
-        
-    }
+        }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Total;
