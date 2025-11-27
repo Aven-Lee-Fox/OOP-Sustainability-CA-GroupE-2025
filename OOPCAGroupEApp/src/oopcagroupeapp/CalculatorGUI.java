@@ -106,6 +106,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
 
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("Yes");
+        jRadioButton1.setActionCommand("\"Yes\"");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton1ActionPerformed(evt);
@@ -114,6 +115,7 @@ public class CalculatorGUI extends javax.swing.JFrame {
 
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("No");
+        jRadioButton2.setActionCommand("\"No\"");
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Do You have solar panels?");
@@ -288,10 +290,17 @@ public class CalculatorGUI extends javax.swing.JFrame {
             myCal.setPeakRate(Double.parseDouble(jTextField2.getText()));
             myCal.setEveUnits(Double.parseDouble(jTextField6.getText()));
             myCal.setEveRate(Double.parseDouble(jTextField3.getText()));
-            //myCal.setSolar(Boolean.parseBoolean(buttonGroup1.getSelection().getActionPerformed()));
-            System.out.println(buttonGroup1.getSelection());
+            myCal.setSolar(buttonGroup1.getSelection().getActionCommand());
+            System.out.println(buttonGroup1.getSelection().getActionCommand());
             myCal.calc();
-            Total.setText("Your Bill = €" + String.format("%.2f", myCal.getTotal()) + " You would save €91 with solar panels");
+            
+            if(myCal.getTotal() == -9999){
+                Total.setText("Please select yes or no above");
+            }else if(buttonGroup1.getSelection().getActionCommand() == "\"No\""){
+                Total.setText("Your Bill = €" + String.format("%.2f", myCal.getTotal()) + " You would save €91 with solar panels");
+            } else{
+                Total.setText("Your Bill = €" + String.format("%.2f", myCal.getTotal()));
+            }
         }catch (NumberFormatException e){
             Total.setText("Invalid input");
         }

@@ -21,6 +21,7 @@ public class Calc {
     private double PeakTotal;
     private double EveTotal;
     private double SolarSave;
+    private String SolarPresent;
     
     public Calc(){
         
@@ -57,6 +58,12 @@ public class Calc {
         this.EveRate = EveRate;
     }
     
+    public void setSolar(String SolarPresent){
+        
+        this.SolarPresent = SolarPresent;
+        
+    }
+    
     public void calc(){
     
     MornTotal = MornUnits * MornRate;
@@ -64,6 +71,21 @@ public class Calc {
     EveTotal = EveUnits * EveRate;
     
     Total = MornTotal + PeakTotal + EveTotal;
+    
+    if(SolarPresent == "\"Yes\""){
+        
+        
+        Total = Total - 91;
+        
+    } else if(SolarPresent == "\"No\"" ){
+        
+        
+        Total = Total;
+        
+    } else
+        
+        Total = -9999;
+    
 }
 
     public double getTotal() {
