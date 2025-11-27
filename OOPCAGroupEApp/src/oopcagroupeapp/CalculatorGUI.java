@@ -4,6 +4,7 @@
  */
 package oopcagroupeapp;
 
+import java.awt.Color;
 /**
  *
  * @author Joseph Moiselle 24308453
@@ -17,6 +18,9 @@ public class CalculatorGUI extends javax.swing.JFrame {
      */
     public CalculatorGUI() {
         initComponents();
+        getContentPane().setBackground(Color.decode("#6EA0B1"));
+        jButton1.setBackground(Color.decode("#E5690B"));
+        jButton2.setBackground(Color.decode("#E5690B"));
     }
 
     /**
@@ -28,7 +32,6 @@ public class CalculatorGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton3 = new javax.swing.JButton();
         buttonGroup1 = new javax.swing.ButtonGroup();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
@@ -49,8 +52,6 @@ public class CalculatorGUI extends javax.swing.JFrame {
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jLabel8 = new javax.swing.JLabel();
-
-        jButton3.setText("jButton3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -105,6 +106,11 @@ public class CalculatorGUI extends javax.swing.JFrame {
 
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("Yes");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("No");
@@ -237,6 +243,10 @@ public class CalculatorGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
 
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -278,6 +288,8 @@ public class CalculatorGUI extends javax.swing.JFrame {
             myCal.setPeakRate(Double.parseDouble(jTextField2.getText()));
             myCal.setEveUnits(Double.parseDouble(jTextField6.getText()));
             myCal.setEveRate(Double.parseDouble(jTextField3.getText()));
+            //myCal.setSolar(Boolean.parseBoolean(buttonGroup1.getSelection().getActionPerformed()));
+            System.out.println(buttonGroup1.getSelection());
             myCal.calc();
             Total.setText("Your Bill = €" + String.format("%.2f", myCal.getTotal()) + " You would save €91 with solar panels");
         }catch (NumberFormatException e){
@@ -291,7 +303,6 @@ public class CalculatorGUI extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -4,6 +4,8 @@
  */
 package oopcagroupeapp;
 
+import java.awt.Color;
+
 /**
  *
  * @author Joseph Moiselle 24308453
@@ -17,6 +19,13 @@ public class MainGUI extends javax.swing.JFrame {
      */
     public MainGUI() {
         initComponents();
+        getContentPane().setBackground(Color.decode("#6EA0B1"));
+        jButton1.setBackground(Color.decode("#E5690B"));
+        jButton2.setBackground(Color.decode("#E5690B"));
+        jButton3.setBackground(Color.decode("#E5690B"));
+        jButton4.setBackground(Color.decode("#E5690B"));
+        jButton5.setBackground(Color.decode("#E5690B"));
+        industryButton.setBackground(Color.decode("#E5690B"));
     }
 
     /**
