@@ -7,7 +7,7 @@ package oopcagroupeapp;
 import java.awt.Color;
 import java.io.*;
 import java.io.Serializable;
-import javax.swing.ButtonModel;
+import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,6 +19,9 @@ public class QuestionnaireGUI extends javax.swing.JFrame implements Serializable
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(QuestionnaireGUI.class.getName());
 
     private String Status;
+    
+   File SolarStatus = new File("SolarStatus.txt");
+
     
     /**
      * Creates new form QuestionnaireGUI
@@ -36,7 +39,6 @@ public class QuestionnaireGUI extends javax.swing.JFrame implements Serializable
         jButton1.setBackground(Color.decode("#E5690B"));
         jButton2.setBackground(Color.decode("#E5690B"));
         jButton3.setBackground(Color.decode("#E5690B"));
-        Status = new String();
         load();
     }
 
@@ -118,11 +120,11 @@ public class QuestionnaireGUI extends javax.swing.JFrame implements Serializable
 
         buttonGroup3.add(jRadioButton6);
         jRadioButton6.setText("Yes");
-        jRadioButton6.setActionCommand("\"Yes\"");
+        jRadioButton6.setActionCommand("Status = \"Yes\";");
 
         buttonGroup3.add(jRadioButton7);
         jRadioButton7.setText("No");
-        jRadioButton7.setActionCommand("\"No\"");
+        jRadioButton7.setActionCommand("Status = \"No\";");
 
         jButton3.setText("Find best work style");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -267,7 +269,6 @@ public class QuestionnaireGUI extends javax.swing.JFrame implements Serializable
             myQuest.setResp3(buttonGroup3.getSelection().getActionCommand());
             myQuest.work();
             jLabel4.setText(myQuest.getWrkStyle());
-            System.out.println(buttonGroup3.getSelection());
             
             save();
         
@@ -280,45 +281,55 @@ public class QuestionnaireGUI extends javax.swing.JFrame implements Serializable
     
 }
     
-    private void load(){
+     private void load(){
     
-        try(ObjectInputStream iStream = new ObjectInputStream(new FileInputStream("SolarStatus.txt"))){
-        
-           Status = iStream.readObject().toString();
+        try(Scanner Sread = new Scanner(SolarStatus)){
             
-            if(iStream.readObject() == "\"Yes\""){
-                
-                
+            while(Sread.hasNextLine()){
             
+                Status = Sread.nextLine();
+                
+            }
+            
+        }catch (FileNotFoundException e){
+                    
+                    JOptionPane.showMessageDialog(null, "An Error has occurred while reading the file");
+                    
+                    }
+            
+            if(Status.contains("Yes")){
+
                 jRadioButton6.setSelected(true);
                 
-            }else{
+            }else if(Status.contains("No")){
             
                jRadioButton7.setSelected(true);
             
             }
             
-        } catch (IOException e){
+        } 
         
-            JOptionPane.showMessageDialog(null, "Cannot load from file" + e);
-            
-        } catch (ClassNotFoundException e){
-        
-           JOptionPane.showMessageDialog(null, "An Error has occurred");
-            
-        }
-        
-    }
         
         private void save(){
             
-          Status =  buttonGroup3.getSelection().getActionCommand();
-        
-        try(ObjectOutputStream oStream = new ObjectOutputStream(new FileOutputStream("SolarStatus.txt"))){
-        
-            oStream.writeObject(Status);
+          if(jRadioButton6.isSelected()){
+          
+              Status = "\"Yes\"";
+                      
+            } else if(jRadioButton7.isSelected()){
             
-        } catch (IOException e){
+                Status = "\"No\"";
+            
+            }
+             
+        
+        try(FileWriter Swrite = new FileWriter("SolarStatus.txt")){
+                
+            Swrite.write(Status);
+            
+            Swrite.close();
+            
+        }catch (IOException e){
         
             JOptionPane.showMessageDialog(null, "Error: An Error Occured while saving file");
             
@@ -346,7 +357,4 @@ public class QuestionnaireGUI extends javax.swing.JFrame implements Serializable
     private javax.swing.JRadioButton jRadioButton7;
     // End of variables declaration//GEN-END:variables
 
-    private ButtonModel getActionCommand(String Status) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

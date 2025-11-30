@@ -37,7 +37,7 @@ public class Questionnaire {
     public void work(){
            int Points = 0;
            
-           if(Resp1 == "\"Yes\""){
+           if(Resp1.contains("Yes")){
                
                Points ++;
                
@@ -47,7 +47,7 @@ public class Questionnaire {
                
            }
            
-           if(Resp2 == "\"Yes\""){
+           if(Resp2.contains("Yes")){
            
                Points ++;
            
@@ -57,7 +57,7 @@ public class Questionnaire {
                
            }
            
-           if(Resp3 == "\"Yes\""){
+           if(Resp3.contains("Yes")){
                
                Points ++;
                
@@ -69,15 +69,15 @@ public class Questionnaire {
            
            if(Points == 3){
            
-               WrkStyle = "You have the resources to sustainably have all your employees come into the office!";
+               WrkStyle = "<html><body style = \"text-align: center\">You have the resources to sustainably have all your employees come into the office!</body></html>";
                
            } else if (Points == 2){
                
-               WrkStyle = "You could have some of your employees in the office sustainably but you should offer remote work too.";
+               WrkStyle = "<html><body style = \"text-align: center\">You could have some of your employees in the office sustainably but you should offer remote work too.</body></html>";
                
            } else{
            
-               WrkStyle = "You should let your employees work remotely.";
+               WrkStyle = "<html><body style = \"text-align: center\">You should let your employees work remotely.</body></html>";
                
            } 
     }

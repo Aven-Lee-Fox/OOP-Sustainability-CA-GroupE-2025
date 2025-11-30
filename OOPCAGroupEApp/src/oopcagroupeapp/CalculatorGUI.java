@@ -5,9 +5,9 @@
 package oopcagroupeapp;
 
 import java.awt.Color;
-import java.util.ArrayList;
-import javax.swing.ButtonModel;
+import java.io.*;
 import javax.swing.JOptionPane;
+import java.util.Scanner;
 /**
  *
  * @author Joseph Moiselle 24308453
@@ -16,8 +16,9 @@ public class CalculatorGUI extends javax.swing.JFrame{
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CalculatorGUI.class.getName());
 
-    private ArrayList<> Input;
     private String Status;
+    File SolarStatus = new File("SolarStatus.txt");
+
     
     /**
      * Creates new form CalculatorGUI
@@ -29,8 +30,6 @@ public class CalculatorGUI extends javax.swing.JFrame{
         jButton2.setBackground(Color.decode("#E5690B"));
         jRadioButton1.setBackground(Color.decode("#6EA0B1"));
         jRadioButton2.setBackground(Color.decode("#6EA0B1"));
-        Input = new ArrayList<>();
-        Status = new String();
         load();
     }
 
@@ -282,8 +281,7 @@ public class CalculatorGUI extends javax.swing.JFrame{
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new CalculatorGUI().setVisible(true));
-        
+        java.awt.EventQueue.invokeLater(() -> new CalculatorGUI().setVisible(true));        
     }
     
     public void calculate(){
@@ -302,7 +300,6 @@ public class CalculatorGUI extends javax.swing.JFrame{
             myCal.setEveUnits(Double.parseDouble(jTextField6.getText()));
             myCal.setEveRate(Double.parseDouble(jTextField3.getText()));
             myCal.setSolar(buttonGroup1.getSelection().getActionCommand());
-            System.out.println(buttonGroup1.getSelection().getActionCommand());
             myCal.calc();
          
            if(buttonGroup1.getSelection().getActionCommand() == "\"No\""){
@@ -322,21 +319,61 @@ public class CalculatorGUI extends javax.swing.JFrame{
         }
         }
     
-    private void save(){
-        
-        Input = buttonGroup1.getSelection().getActionCommand();
-        
-        JosephIO myIO = new JosephIO();
-        
-        myIO.JosephIO(Input);
-        
-    }
-        
-        private void load(){
+   private void load(){
     
-            JosephIO myIO = new JosephIO();
+        try(Scanner Sread = new Scanner(SolarStatus)){
             
-            myIO.load();
+            while(Sread.hasNextLine()){
+            
+                Status = Sread.nextLine();
+                
+            }
+            
+        }catch (FileNotFoundException e){
+                    
+                    JOptionPane.showMessageDialog(null, "An Error has occurred while reading the file");
+                    
+                    }
+            
+            if(Status.contains("Yes")){
+                
+                jRadioButton1.setSelected(true);
+                
+            }else if(Status.contains("No")){
+            
+               jRadioButton2.setSelected(true);
+            
+            }
+            
+        } 
+        
+    
+        
+        private void save(){
+            
+            if(jRadioButton1.isSelected()){
+          
+              Status = "\"Yes\"";
+                      
+            } else if(jRadioButton2.isSelected()){
+            
+                Status = "\"No\"";
+            
+            }
+        
+        try{
+        
+            FileWriter Swrite = new FileWriter("SolarStatus.txt");
+            
+            Swrite.write(Status);
+            
+            Swrite.close();
+            
+        } catch (IOException e){
+        
+            JOptionPane.showMessageDialog(null, "Error: An Error Occured while saving file");
+            
+        }
         
     }
         
@@ -364,7 +401,4 @@ public class CalculatorGUI extends javax.swing.JFrame{
     private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 
-    private ButtonModel getActionCommand(String Status) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

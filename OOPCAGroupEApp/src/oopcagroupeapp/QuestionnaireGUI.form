@@ -206,7 +206,7 @@
           <ComponentRef name="buttonGroup3"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Yes"/>
-        <Property name="actionCommand" type="java.lang.String" value="&quot;Yes&quot;"/>
+        <Property name="actionCommand" type="java.lang.String" value="Status = &quot;Yes&quot;;"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButton7">
@@ -215,7 +215,7 @@
           <ComponentRef name="buttonGroup3"/>
         </Property>
         <Property name="text" type="java.lang.String" value="No"/>
-        <Property name="actionCommand" type="java.lang.String" value="&quot;No&quot;"/>
+        <Property name="actionCommand" type="java.lang.String" value="Status = &quot;No&quot;;"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButton3">
