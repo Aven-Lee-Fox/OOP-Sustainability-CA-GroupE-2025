@@ -5,15 +5,21 @@
 package oopcagroupeapp;
 
 import java.awt.Color;
+import java.io.*;
+import java.io.Serializable;
+import javax.swing.ButtonModel;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Joseph Moiselle 24308453
  */
-public class QuestionnaireGUI extends javax.swing.JFrame {
+public class QuestionnaireGUI extends javax.swing.JFrame implements Serializable {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(QuestionnaireGUI.class.getName());
 
+    private String Status;
+    
     /**
      * Creates new form QuestionnaireGUI
      */
@@ -30,6 +36,8 @@ public class QuestionnaireGUI extends javax.swing.JFrame {
         jButton1.setBackground(Color.decode("#E5690B"));
         jButton2.setBackground(Color.decode("#E5690B"));
         jButton3.setBackground(Color.decode("#E5690B"));
+        Status = new String();
+        load();
     }
 
     /**
@@ -259,6 +267,9 @@ public class QuestionnaireGUI extends javax.swing.JFrame {
             myQuest.setResp3(buttonGroup3.getSelection().getActionCommand());
             myQuest.work();
             jLabel4.setText(myQuest.getWrkStyle());
+            System.out.println(buttonGroup3.getSelection());
+            
+            save();
         
         }catch(NullPointerException e){
             
@@ -268,6 +279,52 @@ public class QuestionnaireGUI extends javax.swing.JFrame {
         }
     
 }
+    
+    private void load(){
+    
+        try(ObjectInputStream iStream = new ObjectInputStream(new FileInputStream("SolarStatus.txt"))){
+        
+           Status = iStream.readObject().toString();
+            
+            if(iStream.readObject() == "\"Yes\""){
+                
+                
+            
+                jRadioButton6.setSelected(true);
+                
+            }else{
+            
+               jRadioButton7.setSelected(true);
+            
+            }
+            
+        } catch (IOException e){
+        
+            JOptionPane.showMessageDialog(null, "Cannot load from file" + e);
+            
+        } catch (ClassNotFoundException e){
+        
+           JOptionPane.showMessageDialog(null, "An Error has occurred");
+            
+        }
+        
+    }
+        
+        private void save(){
+            
+          Status =  buttonGroup3.getSelection().getActionCommand();
+        
+        try(ObjectOutputStream oStream = new ObjectOutputStream(new FileOutputStream("SolarStatus.txt"))){
+        
+            oStream.writeObject(Status);
+            
+        } catch (IOException e){
+        
+            JOptionPane.showMessageDialog(null, "Error: An Error Occured while saving file");
+            
+        }
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
@@ -288,4 +345,8 @@ public class QuestionnaireGUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JRadioButton jRadioButton7;
     // End of variables declaration//GEN-END:variables
+
+    private ButtonModel getActionCommand(String Status) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

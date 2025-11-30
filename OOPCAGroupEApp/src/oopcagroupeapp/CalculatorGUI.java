@@ -5,14 +5,20 @@
 package oopcagroupeapp;
 
 import java.awt.Color;
+import java.util.ArrayList;
+import javax.swing.ButtonModel;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Joseph Moiselle 24308453
  */
-public class CalculatorGUI extends javax.swing.JFrame {
+public class CalculatorGUI extends javax.swing.JFrame{
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CalculatorGUI.class.getName());
 
+    private ArrayList<> Input;
+    private String Status;
+    
     /**
      * Creates new form CalculatorGUI
      */
@@ -23,6 +29,9 @@ public class CalculatorGUI extends javax.swing.JFrame {
         jButton2.setBackground(Color.decode("#E5690B"));
         jRadioButton1.setBackground(Color.decode("#6EA0B1"));
         jRadioButton2.setBackground(Color.decode("#6EA0B1"));
+        Input = new ArrayList<>();
+        Status = new String();
+        load();
     }
 
     /**
@@ -301,6 +310,9 @@ public class CalculatorGUI extends javax.swing.JFrame {
             } else{
                 Total.setText("Your Bill = €" + String.format("%.2f", myCal.getTotal()));
             }
+           save();
+           
+           
         }catch (NumberFormatException e){
             Total.setText("Invalid input");
         } catch (NullPointerException e){
@@ -309,6 +321,25 @@ public class CalculatorGUI extends javax.swing.JFrame {
             
         }
         }
+    
+    private void save(){
+        
+        Input = buttonGroup1.getSelection().getActionCommand();
+        
+        JosephIO myIO = new JosephIO();
+        
+        myIO.JosephIO(Input);
+        
+    }
+        
+        private void load(){
+    
+            JosephIO myIO = new JosephIO();
+            
+            myIO.load();
+        
+    }
+        
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Total;
@@ -332,4 +363,8 @@ public class CalculatorGUI extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
+
+    private ButtonModel getActionCommand(String Status) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
