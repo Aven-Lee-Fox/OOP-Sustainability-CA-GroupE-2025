@@ -20,7 +20,6 @@ public class Calc {
     private double MornTotal;
     private double PeakTotal;
     private double EveTotal;
-    private double SolarSave;
     private String SolarPresent;
     
     public Calc(){
