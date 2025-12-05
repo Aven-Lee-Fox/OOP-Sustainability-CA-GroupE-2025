@@ -4,6 +4,9 @@
  */
 package oopcagroupeapp;
 
+import java.awt.Color;
+
+
 /**
  *
  * @Vincentas Tarasevicius x23524449
@@ -17,6 +20,11 @@ public class EnvironmentCal extends javax.swing.JFrame {
      */
     public EnvironmentCal() {
         initComponents();
+        getContentPane().setBackground(Color.decode("#6EA0B1"));
+        menuButton.setBackground(Color.decode("#E5690B"));
+        calculateButton.setBackground(Color.decode("#E5690B"));
+        projectComboBox.setBackground(Color.decode("#E5690B"));
+        materialsPanel.setBackground(Color.decode("#E5690B"));
     }
 
     /**
@@ -32,7 +40,7 @@ public class EnvironmentCal extends javax.swing.JFrame {
         projectLabel = new javax.swing.JLabel();
         projectComboBox = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
-        materilasPanel = new javax.swing.JPanel();
+        materialsPanel = new javax.swing.JPanel();
         concreteLabel = new javax.swing.JLabel();
         steelLabel = new javax.swing.JLabel();
         woodLabel = new javax.swing.JLabel();
@@ -112,34 +120,34 @@ public class EnvironmentCal extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout materilasPanelLayout = new javax.swing.GroupLayout(materilasPanel);
-        materilasPanel.setLayout(materilasPanelLayout);
-        materilasPanelLayout.setHorizontalGroup(
-            materilasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(materilasPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout materialsPanelLayout = new javax.swing.GroupLayout(materialsPanel);
+        materialsPanel.setLayout(materialsPanelLayout);
+        materialsPanelLayout.setHorizontalGroup(
+            materialsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(materialsPanelLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addGroup(materilasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(materilasPanelLayout.createSequentialGroup()
-                        .addGroup(materilasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(materilasPanelLayout.createSequentialGroup()
+                .addGroup(materialsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(materialsPanelLayout.createSequentialGroup()
+                        .addGroup(materialsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(materialsPanelLayout.createSequentialGroup()
                                 .addComponent(steelLabel)
                                 .addGap(27, 27, 27)
                                 .addComponent(steelTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(materilasPanelLayout.createSequentialGroup()
+                            .addGroup(materialsPanelLayout.createSequentialGroup()
                                 .addComponent(concreteLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(concreteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
-                        .addGroup(materilasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, materilasPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
+                        .addGroup(materialsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, materialsPanelLayout.createSequentialGroup()
                                 .addComponent(recycledConcreteLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(recycledConcreteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(materilasPanelLayout.createSequentialGroup()
+                            .addGroup(materialsPanelLayout.createSequentialGroup()
                                 .addComponent(recycledSteelLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(recycledSteelTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(materilasPanelLayout.createSequentialGroup()
+                    .addGroup(materialsPanelLayout.createSequentialGroup()
                         .addComponent(woodLabel)
                         .addGap(18, 18, 18)
                         .addComponent(woodTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -149,23 +157,23 @@ public class EnvironmentCal extends javax.swing.JFrame {
                         .addComponent(recycledWoodTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
-        materilasPanelLayout.setVerticalGroup(
-            materilasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(materilasPanelLayout.createSequentialGroup()
+        materialsPanelLayout.setVerticalGroup(
+            materialsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(materialsPanelLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addGroup(materilasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(materialsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(concreteLabel)
                     .addComponent(recycledConcreteLabel)
                     .addComponent(concreteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(recycledConcreteTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(63, 63, 63)
-                .addGroup(materilasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(materialsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(steelLabel)
                     .addComponent(steelTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(recycledSteelLabel)
                     .addComponent(recycledSteelTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                .addGroup(materilasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(materialsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(woodLabel)
                     .addComponent(woodTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(recycledWoodLabel)
@@ -192,32 +200,28 @@ public class EnvironmentCal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(calLabel)
+                .addGap(138, 138, 138))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(materilasPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(materialsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(projectLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(projectComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(191, 191, 191)
-                .addComponent(calculateButton)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(144, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(menuButton)
-                        .addGap(165, 165, 165))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(calLabel)
-                        .addGap(138, 138, 138))))
+                                .addComponent(projectComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(190, 190, 190)
+                        .addComponent(calculateButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(167, 167, 167)
+                        .addComponent(menuButton)))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,15 +235,16 @@ public class EnvironmentCal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
-                .addComponent(materilasPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(materialsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(calculateButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addGap(30, 30, 30)
                 .addComponent(menuButton)
-                .addGap(27, 27, 27))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void concreteTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_concreteTextFieldActionPerformed
@@ -359,7 +364,7 @@ public class EnvironmentCal extends javax.swing.JFrame {
     private javax.swing.JLabel concreteLabel;
     private javax.swing.JTextField concreteTextField;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel materilasPanel;
+    private javax.swing.JPanel materialsPanel;
     private javax.swing.JToggleButton menuButton;
     private javax.swing.JComboBox<String> projectComboBox;
     private javax.swing.JLabel projectLabel;

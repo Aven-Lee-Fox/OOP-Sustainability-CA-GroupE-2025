@@ -6,7 +6,7 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -32,7 +32,7 @@
                       <EmptySpace min="-2" pref="164" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="materilasPanel" min="-2" max="-2" attributes="0"/>
+                      <Component id="materialsPanel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="15" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -58,12 +58,12 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="compareLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="32" max="32767" attributes="0"/>
-              <Component id="materilasPanel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="materialsPanel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="compareButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Component id="menuButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -77,7 +77,7 @@
         <Property name="text" type="java.lang.String" value="Compare Materials"/>
       </Properties>
     </Component>
-    <Container class="javax.swing.JPanel" name="materilasPanel">
+    <Container class="javax.swing.JPanel" name="materialsPanel">
 
       <Layout>
         <DimensionLayout dim="0">
@@ -92,7 +92,7 @@
                   </Group>
                   <EmptySpace pref="224" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="recycledConcretCheckBox" min="-2" max="-2" attributes="0"/>
+                      <Component id="recycledConcreteCheckBox" min="-2" max="-2" attributes="0"/>
                       <Component id="recycledSteelCheckBox" min="-2" max="-2" attributes="0"/>
                       <Component id="recycledWoodCheckBox" min="-2" max="-2" attributes="0"/>
                       <Component id="recycledLabel" min="-2" max="-2" attributes="0"/>
@@ -111,7 +111,7 @@
                   </Group>
                   <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="recycledConcretCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="recycledConcreteCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="concreteCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
@@ -120,9 +120,9 @@
                       <Component id="recycledSteelCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="77" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="recycledWoodCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="woodCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="woodCheckBox" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
               </Group>
@@ -130,12 +130,12 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JCheckBox" name="recycledConcretCheckBox">
+        <Component class="javax.swing.JCheckBox" name="recycledConcreteCheckBox">
           <Properties>
             <Property name="text" type="java.lang.String" value="Recycled Concrete"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="recycledConcretCheckBoxActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="recycledConcreteCheckBoxActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="concreteCheckBox">

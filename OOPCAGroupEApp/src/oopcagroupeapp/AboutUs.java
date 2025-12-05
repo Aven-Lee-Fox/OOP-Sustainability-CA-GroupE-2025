@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package oopcagroupeapp;
-
+import java.awt.Color;
 /**
  *
  * @Vincentas Tarasevicius x23524449
@@ -17,6 +17,9 @@ public class AboutUs extends javax.swing.JFrame {
      */
     public AboutUs() {
         initComponents();
+        getContentPane().setBackground(Color.decode("#6EA0B1"));
+        textPanel.setBackground(Color.decode("#E5690B"));
+        menuButton1.setBackground(Color.decode("#E5690B"));
     }
 
     /**
@@ -33,10 +36,10 @@ public class AboutUs extends javax.swing.JFrame {
         whyLabel = new javax.swing.JLabel();
         textLabel = new javax.swing.JLabel();
         featuresLabel = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        industryLabel = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        innovationLabel = new javax.swing.JLabel();
+        InfrastructureLabel = new javax.swing.JLabel();
         contactLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -53,11 +56,11 @@ public class AboutUs extends javax.swing.JFrame {
 
         featuresLabel.setText("Features:");
 
-        jLabel4.setText("- Industry.");
+        industryLabel.setText("- Industry.");
 
-        jLabel6.setText("- Innovation.");
+        innovationLabel.setText("- Innovation.");
 
-        jLabel7.setText("- Infrastructure.");
+        InfrastructureLabel.setText("- Infrastructure.");
 
         contactLabel.setText("Feel free to ask any questions in Contact Us :)");
 
@@ -79,9 +82,9 @@ public class AboutUs extends javax.swing.JFrame {
                     .addGroup(textPanelLayout.createSequentialGroup()
                         .addGroup(textPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel6)
+                            .addComponent(industryLabel)
+                            .addComponent(InfrastructureLabel)
+                            .addComponent(innovationLabel)
                             .addComponent(featuresLabel))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(textPanelLayout.createSequentialGroup()
@@ -108,11 +111,11 @@ public class AboutUs extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addComponent(featuresLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
+                .addComponent(industryLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
+                .addComponent(innovationLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
+                .addComponent(InfrastructureLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addComponent(contactLabel)
                 .addGap(53, 53, 53))
@@ -157,6 +160,7 @@ public class AboutUs extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButton1ActionPerformed
@@ -191,14 +195,14 @@ public class AboutUs extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel InfrastructureLabel;
     private javax.swing.JLabel contactLabel;
     private javax.swing.JLabel featuresLabel;
+    private javax.swing.JLabel industryLabel;
+    private javax.swing.JLabel innovationLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JButton menuButton1;
     private javax.swing.JLabel textLabel;
     private javax.swing.JPanel textPanel;

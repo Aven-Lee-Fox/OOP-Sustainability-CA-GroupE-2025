@@ -4,6 +4,9 @@
  */
 package oopcagroupeapp;
 
+import java.awt.Color;
+
+
 /**
  *
  * @Vincentas Tarasevicius x23524449
@@ -17,6 +20,18 @@ public class CompareMat extends javax.swing.JFrame {
      */
     public CompareMat() {
         initComponents();
+        getContentPane().setBackground(Color.decode("#6EA0B1"));
+        compareButton.setBackground(Color.decode("#E5690B"));
+        menuButton.setBackground(Color.decode("#E5690B"));
+        materialsPanel.setBackground(Color.decode("#E5690B"));
+        recycledConcreteCheckBox.setBackground(Color.decode("#E5690B"));
+        recycledSteelCheckBox.setBackground(Color.decode("#E5690B"));
+        recycledWoodCheckBox.setBackground(Color.decode("#E5690B"));
+        concreteCheckBox.setBackground(Color.decode("#E5690B"));
+        woodCheckBox.setBackground(Color.decode("#E5690B"));
+        steelCheckBox.setBackground(Color.decode("#E5690B"));
+
+        
     }
 
     /**
@@ -29,8 +44,8 @@ public class CompareMat extends javax.swing.JFrame {
     private void initComponents() {
 
         compareLabel = new javax.swing.JLabel();
-        materilasPanel = new javax.swing.JPanel();
-        recycledConcretCheckBox = new javax.swing.JCheckBox();
+        materialsPanel = new javax.swing.JPanel();
+        recycledConcreteCheckBox = new javax.swing.JCheckBox();
         concreteCheckBox = new javax.swing.JCheckBox();
         woodCheckBox = new javax.swing.JCheckBox();
         recycledWoodCheckBox = new javax.swing.JCheckBox();
@@ -46,10 +61,10 @@ public class CompareMat extends javax.swing.JFrame {
         compareLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         compareLabel.setText("Compare Materials");
 
-        recycledConcretCheckBox.setText("Recycled Concrete");
-        recycledConcretCheckBox.addActionListener(new java.awt.event.ActionListener() {
+        recycledConcreteCheckBox.setText("Recycled Concrete");
+        recycledConcreteCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                recycledConcretCheckBoxActionPerformed(evt);
+                recycledConcreteCheckBoxActionPerformed(evt);
             }
         });
 
@@ -72,42 +87,42 @@ public class CompareMat extends javax.swing.JFrame {
 
         recycledLabel.setText("Recycled Materials");
 
-        javax.swing.GroupLayout materilasPanelLayout = new javax.swing.GroupLayout(materilasPanel);
-        materilasPanel.setLayout(materilasPanelLayout);
-        materilasPanelLayout.setHorizontalGroup(
-            materilasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(materilasPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout materialsPanelLayout = new javax.swing.GroupLayout(materialsPanel);
+        materialsPanel.setLayout(materialsPanelLayout);
+        materialsPanelLayout.setHorizontalGroup(
+            materialsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(materialsPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(materilasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(materialsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(traditionalLabel)
                     .addComponent(steelCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(woodCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(concreteCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 224, Short.MAX_VALUE)
-                .addGroup(materilasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(recycledConcretCheckBox)
+                .addGroup(materialsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(recycledConcreteCheckBox)
                     .addComponent(recycledSteelCheckBox)
                     .addComponent(recycledWoodCheckBox)
                     .addComponent(recycledLabel))
                 .addGap(8, 8, 8))
         );
-        materilasPanelLayout.setVerticalGroup(
-            materilasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(materilasPanelLayout.createSequentialGroup()
+        materialsPanelLayout.setVerticalGroup(
+            materialsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(materialsPanelLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addGroup(materilasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(materialsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(traditionalLabel)
                     .addComponent(recycledLabel))
                 .addGap(44, 44, 44)
-                .addGroup(materilasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(recycledConcretCheckBox)
+                .addGroup(materialsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(recycledConcreteCheckBox)
                     .addComponent(concreteCheckBox))
                 .addGap(77, 77, 77)
-                .addGroup(materilasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(materialsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(steelCheckBox)
                     .addComponent(recycledSteelCheckBox))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
-                .addGroup(materilasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(materialsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(recycledWoodCheckBox)
                     .addComponent(woodCheckBox))
                 .addGap(38, 38, 38))
@@ -140,7 +155,7 @@ public class CompareMat extends javax.swing.JFrame {
                         .addComponent(menuButton)
                         .addGap(164, 164, 164))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(materilasPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(materialsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(15, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -158,24 +173,25 @@ public class CompareMat extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(compareLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(materilasPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(materialsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(compareButton)
-                .addGap(18, 18, 18)
+                .addGap(26, 26, 26)
                 .addComponent(menuButton)
-                .addGap(16, 16, 16))
+                .addGap(14, 14, 14))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void steelCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_steelCheckBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_steelCheckBoxActionPerformed
 
-    private void recycledConcretCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recycledConcretCheckBoxActionPerformed
+    private void recycledConcreteCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recycledConcreteCheckBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_recycledConcretCheckBoxActionPerformed
+    }//GEN-LAST:event_recycledConcreteCheckBoxActionPerformed
 
     private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
         InfrastructurePlanner mainMenu = new InfrastructurePlanner();
@@ -190,7 +206,7 @@ public class CompareMat extends javax.swing.JFrame {
         if(concreteCheckBox.isSelected()){
             message += "Concrete: 0.15 kg CO2. ";   //regular concrete has more CO2
         }
-        if(recycledConcretCheckBox.isSelected()){
+        if(recycledConcreteCheckBox.isSelected()){
             message += " Recycled Concrete: 0.05 kg CO2. "; //  Recycled concrete has lower CO2
         }
         if(steelCheckBox.isSelected()){
@@ -244,9 +260,9 @@ public class CompareMat extends javax.swing.JFrame {
     private javax.swing.JButton compareButton;
     private javax.swing.JLabel compareLabel;
     private javax.swing.JCheckBox concreteCheckBox;
-    private javax.swing.JPanel materilasPanel;
+    private javax.swing.JPanel materialsPanel;
     private javax.swing.JButton menuButton;
-    private javax.swing.JCheckBox recycledConcretCheckBox;
+    private javax.swing.JCheckBox recycledConcreteCheckBox;
     private javax.swing.JLabel recycledLabel;
     private javax.swing.JCheckBox recycledSteelCheckBox;
     private javax.swing.JCheckBox recycledWoodCheckBox;

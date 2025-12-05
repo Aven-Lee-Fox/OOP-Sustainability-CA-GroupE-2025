@@ -99,7 +99,6 @@ public class Estimator {
         
         Response = "<html><body style = \"text-align: center\"> The " + SelectedInd + " industry in " + SelectedCont + " contributes to roughly " + Pollution[x][y] + "% of the pollution in the continent on average per year. </body></html>";
         
-        System.out.println(Response);
         
     }
     

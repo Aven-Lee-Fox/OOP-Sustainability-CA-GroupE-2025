@@ -3,12 +3,84 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package oopcagroupeapp;
-
+import java.awt.Color;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 /**
  *
  * @Vincentas Tarasevicius x23524449
  */
+//class that stores message info
+class Contact{
+    private final String name;
+    private final String email;
+    private final String subject;
+    private final String message;
+    
+    // constructor creates new contact wit detail
+    public Contact(String name, String email, String subject, String message){
+    this.name = name;
+    this.email = email;
+    this.subject = subject;
+    this.message = message;
+    // getters that allow acces to private data
+    }
+    public String getName(){
+        return name;
+    }
+    public String getEmail(){
+        return email;
+    }
+    public String getSubject(){
+        return subject;
+    }
+    public String getMessage(){
+        return message;
+    }
+}
+//main contact us class
 public class ContactUs extends javax.swing.JFrame {
+    //arraylist to put all contacts
+    private final ArrayList<Contact> contactList = new ArrayList<>();  
+    //save file
+    private void saveFile(){
+        try{
+            java.io.FileWriter writer = new java.io.FileWriter("Contacts.txt");
+            for(Contact contact : contactList){
+                writer.write(contact.getName() + ","
+                        +
+                        contact.getEmail()+ ","
+                        +
+                        contact.getSubject() + ","
+                        +
+                        contact.getMessage() + "\n");
+            }
+            writer.close();
+            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this,"Error saving contacts");
+        }
+    }//loads the contacts from file
+    private void loadFile(){
+        try{
+            java.io.File file = new java.io.File("Contacts.txt");
+            if(!file.exists()) return;
+            
+            var scanner = new java.util.Scanner(file);
+            
+            while(scanner.hasNextLine()){
+                String line = scanner.nextLine();
+                String[] parts = line.split(",");
+                if(parts.length == 4){
+                    contactList.add(new Contact(parts[0], parts[1], parts[2], parts[3]));
+                }
+            }
+            scanner.close();
+                        
+        }catch(Exception e){
+            
+        }
+    }
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ContactUs.class.getName());
 
@@ -17,8 +89,15 @@ public class ContactUs extends javax.swing.JFrame {
      */
     public ContactUs() {
         initComponents();
-    }
+        loadFile();
+        getContentPane().setBackground(Color.decode("#6EA0B1"));
+        viewButton.setBackground(Color.decode("#E5690B"));
+        searchButton.setBackground(Color.decode("#E5690B"));
+        deleteButton.setBackground(Color.decode("#E5690B"));
+        submitButton.setBackground(Color.decode("#E5690B"));
+        menuButton.setBackground(Color.decode("#E5690B"));
 
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,7 +108,7 @@ public class ContactUs extends javax.swing.JFrame {
     private void initComponents() {
 
         contactLabel = new javax.swing.JLabel();
-        meneButton = new javax.swing.JButton();
+        menuButton = new javax.swing.JButton();
         developerLabel = new javax.swing.JLabel();
         emailLabel = new javax.swing.JLabel();
         phoneLabel = new javax.swing.JLabel();
@@ -45,17 +124,20 @@ public class ContactUs extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         messageTextArea = new javax.swing.JTextArea();
         submitButton = new javax.swing.JButton();
+        deleteButton = new javax.swing.JButton();
+        searchButton = new javax.swing.JButton();
+        viewButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         contactLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         contactLabel.setText("Contact Us");
 
-        meneButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        meneButton.setText("Back to Menu");
-        meneButton.addActionListener(new java.awt.event.ActionListener() {
+        menuButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        menuButton.setText("Back to Menu");
+        menuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                meneButtonActionPerformed(evt);
+                menuButtonActionPerformed(evt);
             }
         });
 
@@ -102,6 +184,27 @@ public class ContactUs extends javax.swing.JFrame {
             }
         });
 
+        deleteButton.setText("Delete");
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
+
+        searchButton.setText("Search");
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchButtonActionPerformed(evt);
+            }
+        });
+
+        viewButton.setText("View");
+        viewButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -112,10 +215,6 @@ public class ContactUs extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel6)
                 .addGap(36, 36, 36))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -145,14 +244,25 @@ public class ContactUs extends javax.swing.JFrame {
                     .addComponent(subjectTextField))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(77, 77, 77)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(submitButton)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(171, 171, 171)
-                        .addComponent(meneButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(207, 207, 207)
-                        .addComponent(submitButton)))
+                        .addComponent(viewButton)
+                        .addGap(65, 65, 65)
+                        .addComponent(searchButton)))
+                .addGap(66, 66, 66)
+                .addComponent(deleteButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(23, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 458, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(menuButton)
+                        .addGap(174, 174, 174))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,22 +291,28 @@ public class ContactUs extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(messageLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(submitButton)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(meneButton)
-                .addGap(18, 18, 18))
+                .addComponent(submitButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(viewButton)
+                    .addComponent(searchButton)
+                    .addComponent(deleteButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(menuButton)
+                .addGap(12, 12, 12))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void meneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meneButtonActionPerformed
+    private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
         MainGUI main = new MainGUI();
         main.setVisible(true);
-        dispose(); 
-    }//GEN-LAST:event_meneButtonActionPerformed
+        dispose(); //makes u go back to menu
+    }//GEN-LAST:event_menuButtonActionPerformed
 
     private void nameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextFieldActionPerformed
         // TODO add your handling code here:
@@ -224,6 +340,10 @@ public class ContactUs extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this,"Please us a valid email with a @gmail");
             return;
         }
+        Contact newContact = new Contact(name, email, subject, message);
+        contactList.add(newContact);
+        
+        saveFile(); //this saves the file
         
         // this will print out if you actully comply with entering evrythin right
         javax.swing.JOptionPane.showMessageDialog(this, "Thank you for submitting your message and helpng this planet to be more greener.");      
@@ -234,6 +354,66 @@ public class ContactUs extends javax.swing.JFrame {
         subjectTextField.setText("");
         messageTextArea.setText("");
     }//GEN-LAST:event_submitButtonActionPerformed
+
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        //delete button removes last contact
+        if(contactList.isEmpty()){
+            JOptionPane.showMessageDialog(this,"No contacts to delete");
+            return;
+        }
+        Contact deletedView = contactList.remove(contactList.size()-1);
+        saveFile();// update the file after delete
+        JOptionPane.showMessageDialog(this,"Deleted: " + deletedView.getName());
+    }//GEN-LAST:event_deleteButtonActionPerformed
+// finds contact by name
+    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+        if(contactList.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Enter name to search:");
+            return;
+        }
+
+        String searchName = JOptionPane.showInputDialog(this,"Enter name to search:");
+        if(searchName == null || searchName.isBlank()) return;
+        
+        boolean found = false;
+        //searches through all contacts
+        for(Contact contact : contactList){
+            if(contact.getName().toLowerCase().contains(searchName.toLowerCase())){
+                String message = "Contact is Found" +
+                        " Name: " + contact.getName() 
+                        +
+                        " Email: " + contact.getEmail()
+                        +
+                        " Subject: " + contact.getSubject()
+                        +
+                        " Message: " + contact.getMessage();
+                JOptionPane.showMessageDialog(this, message);
+                found = true;
+                break;
+            }
+        }      
+        if(!found){
+            JOptionPane.showMessageDialog(this,"No contacts with the name: " + searchName);
+        }
+    }//GEN-LAST:event_searchButtonActionPerformed
+// view button allows you to show all contacts
+    private void viewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewButtonActionPerformed
+        if(contactList.isEmpty()){
+            JOptionPane.showMessageDialog(this, "No contacts are stored yet");
+            return;
+        }
+        //shows each contact in seperate message
+        for(Contact contact: contactList){
+            String message = " Name: " + contact.getName()
+                    +
+                    " Email: " + contact.getEmail()
+                    +
+                    " Subject: " + contact.getSubject()
+                    +
+                    " Message: " + contact.getMessage();
+            JOptionPane.showMessageDialog(this, message);
+        }
+    }//GEN-LAST:event_viewButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -259,9 +439,10 @@ public class ContactUs extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new ContactUs().setVisible(true));
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel contactLabel;
+    private javax.swing.JButton deleteButton;
     private javax.swing.JLabel developerLabel;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JTextField emailTextField;
@@ -270,13 +451,15 @@ public class ContactUs extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton meneButton;
+    private javax.swing.JButton menuButton;
     private javax.swing.JLabel messageLabel;
     private javax.swing.JTextArea messageTextArea;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JTextField nameTextField;
     private javax.swing.JLabel phoneLabel;
+    private javax.swing.JButton searchButton;
     private javax.swing.JTextField subjectTextField;
     private javax.swing.JButton submitButton;
+    private javax.swing.JButton viewButton;
     // End of variables declaration//GEN-END:variables
 }
