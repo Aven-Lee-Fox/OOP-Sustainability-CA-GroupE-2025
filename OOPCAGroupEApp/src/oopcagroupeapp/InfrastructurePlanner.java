@@ -4,6 +4,8 @@
  */
 package oopcagroupeapp;
 
+import java.awt.Color;
+
 /**
  *
  * @Vincentas Tarasevicius x23524449
@@ -17,7 +19,11 @@ public class InfrastructurePlanner extends javax.swing.JFrame {
      */
     public InfrastructurePlanner() {
         initComponents();
-        setLocationRelativeTo(null);
+        getContentPane().setBackground(Color.decode("#6EA0B1"));
+        costCalButton.setBackground(Color.decode("#E5690B"));
+        envCalButton.setBackground(Color.decode("#E5690B"));
+        compMatButton.setBackground(Color.decode("#E5690B"));
+        mainButton.setBackground(Color.decode("#E5690B"));
     }
 
     /**
@@ -58,7 +64,7 @@ public class InfrastructurePlanner extends javax.swing.JFrame {
         });
 
         mainButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        mainButton.setText("Main Menu");
+        mainButton.setText("Home");
         mainButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mainButtonActionPerformed(evt);
@@ -109,6 +115,7 @@ public class InfrastructurePlanner extends javax.swing.JFrame {
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {compMatButton, costCalButton, envCalButton, jLabel1, mainButton});
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void costCalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_costCalButtonActionPerformed

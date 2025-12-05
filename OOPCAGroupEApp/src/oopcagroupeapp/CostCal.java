@@ -4,10 +4,60 @@
  */
 package oopcagroupeapp;
 
+import java.awt.Color;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @Vincentas Tarasevicius x23524449
  */
+abstract class Cost{
+    protected double amount;
+    protected String costType;
+    
+    public Cost(double amount, String costType){
+        this.amount = amount;
+        this.costType = costType;
+    }
+    public abstract double calculateCost();
+    public abstract String getCost();
+    
+    public double getAmount(){
+        return amount;
+    }
+    public String getCostType(){
+        return costType;
+    }
+}
+    
+class MaterialCost extends Cost{
+    public MaterialCost(double amount){
+        super(amount, "Materials");
+        }
+    
+    @Override
+    public double calculateCost(){
+        return amount;
+    }
+    @Override
+    public String getCost(){
+        return "Materials: " + amount;
+    }
+}
+
+class LabourCost extends Cost{
+    public LabourCost(double amount){
+        super(amount, "Labour");
+    }
+    @Override
+    public double calculateCost(){
+        return amount;
+    }
+    @Override
+    public String getCost(){
+        return "Labour: " + amount;
+    }
+}
 public class CostCal extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CostCal.class.getName());
@@ -17,6 +67,9 @@ public class CostCal extends javax.swing.JFrame {
      */
     public CostCal() {
         initComponents();
+        getContentPane().setBackground(Color.decode("#6EA0B1"));
+        calculateButton.setBackground(Color.decode("#E5690B"));
+        menuButton.setBackground(Color.decode("#E5690B"));
     }
 
     /**
@@ -35,9 +88,10 @@ public class CostCal extends javax.swing.JFrame {
         labourTextField = new javax.swing.JTextField();
         materialTextField = new javax.swing.JTextField();
         calculateButton = new javax.swing.JButton();
-        backButton = new javax.swing.JButton();
+        menuButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         titleLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         titleLabel.setText("Cost Calculator");
@@ -62,11 +116,11 @@ public class CostCal extends javax.swing.JFrame {
             }
         });
 
-        backButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        backButton.setText("Back to Menu");
-        backButton.addActionListener(new java.awt.event.ActionListener() {
+        menuButton.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        menuButton.setText("Back to Menu");
+        menuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backButtonActionPerformed(evt);
+                menuButtonActionPerformed(evt);
             }
         });
 
@@ -88,7 +142,7 @@ public class CostCal extends javax.swing.JFrame {
                 .addGap(97, 97, 97))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(backButton)
+                .addComponent(menuButton)
                 .addGap(174, 174, 174))
             .addGroup(layout.createSequentialGroup()
                 .addGap(180, 180, 180)
@@ -113,34 +167,48 @@ public class CostCal extends javax.swing.JFrame {
                     .addComponent(totalLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(calculateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(80, 80, 80)
-                .addComponent(backButton)
+                .addComponent(menuButton)
                 .addGap(52, 52, 52))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void labourTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labourTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_labourTextFieldActionPerformed
 
-    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+    private void menuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuButtonActionPerformed
         InfrastructurePlanner mainMenu = new InfrastructurePlanner();
         mainMenu.setVisible(true);
         dispose();
-    }//GEN-LAST:event_backButtonActionPerformed
+    }//GEN-LAST:event_menuButtonActionPerformed
 
     private void calculateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateButtonActionPerformed
         try{
-            //this gets the numbers from the boxes
-            double material = Double.parseDouble(labourTextField.getText());
-            double labour = Double.parseDouble(materialTextField.getText());
-            // this adds the together
-            double total = material + labour;
-            //shows the result
+            double material = Double.parseDouble(materialTextField.getText());
+            double labour = Double.parseDouble(labourTextField.getText());
+            
+            Cost materialCost = new MaterialCost(material);
+            Cost labourCost = new LabourCost(labour);
+            
+            double materialTotal = materialCost.calculateCost();
+            double labourTotal = labourCost.calculateCost();
+            double total = materialTotal + labourTotal;
+            
             totalLabel.setText("Total: " + total);
-        }catch (NumberFormatException e){
-            //if the user types words instead of numbers it will show an error
+            
+            String details = "Final Cost\n"
+                    +
+                    materialCost.getCost() + "\n"
+                    +
+                    labourCost.getCost() + "\n"
+                    +
+                    "Total " + total;
+            
+            JOptionPane.showMessageDialog(this, details);
+        }catch (Exception e){
             totalLabel.setText("Total: Invalid input");
         }
     }//GEN-LAST:event_calculateButtonActionPerformed
@@ -167,12 +235,12 @@ public class CostCal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> new CostCal().setVisible(true));
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backButton;
     private javax.swing.JButton calculateButton;
     private javax.swing.JLabel labourField;
     private javax.swing.JTextField labourTextField;
     private javax.swing.JLabel materialField;
     private javax.swing.JTextField materialTextField;
+    private javax.swing.JButton menuButton;
     private javax.swing.JLabel titleLabel;
     private javax.swing.JLabel totalLabel;
     // End of variables declaration//GEN-END:variables
